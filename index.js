@@ -8,6 +8,10 @@ window.fbAsyncInit = function() {
 
     FB.AppEvents.logPageView();
 
+    FB.getLoginStatus(function(response) {
+        console.log(response)
+    });
+
 };
 
 (function(d, s, id){
@@ -18,6 +22,3 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-FB.getLoginStatus(function(response) {
-    console.log(response)
-});
