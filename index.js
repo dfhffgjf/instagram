@@ -8,9 +8,11 @@ window.fbAsyncInit = function() {
 
     FB.AppEvents.logPageView();
 
-    FB.getLoginStatus(function(response) {
-        console.log(response)
-    });
+    
+
+    FB.login(function(response) {
+        console.log(response);
+    }, {scope: 'user_birthday'});
 
 };
 
