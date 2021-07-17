@@ -8,9 +8,11 @@ window.fbAsyncInit = function() {
 
     FB.AppEvents.logPageView();
 
-    FB.logout(function(response) {
-        console.log('LOG OUT')
-    });
+    FB.getLoginStatus(function(response) {
+        if (response.status === 'connected') {
+            console.log('U are connected')
+        }
+    } );
 
 };
 
